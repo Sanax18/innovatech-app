@@ -1,0 +1,91 @@
+.forecast-container {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 0.9rem; /* contenido un poco más pequeño */
+}
+.small-title {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.stats-cards {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.card-forecast {
+  background-color: #f8f9fa;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  flex: 1;
+  max-width: 160px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s;
+}
+.card-forecast:hover {
+  border-color: #aaa;
+}
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.card-forecast h2 {
+  margin: 0.5rem 0;
+  font-size: 1.6rem;
+}
+.card-forecast p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #555;
+}
+.refresh-btn-forecast {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.refresh-btn-forecast:hover {
+  background-color: #0056b3;
+}
+.forecast-table {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.forecast-table th,
+.forecast-table td {
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 0.5rem; /* reducimos el padding para que sea más pequeño */
+}
+.forecast-table th {
+  background-color: #f1f1f1;
+}
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.pagination-controls button {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,64 @@
+/* Estilos generales para la pestaña de Detección */
+.detection-container {
+  padding: 1rem;
+  text-align: center;
+}
+
+.detection__description {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Grid para las opciones */
+.detection__option-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Tarjeta de opción (cuadrado) */
+.detection__option-card {
+  width: 150px;
+  height: 150px;
+  background-color: #eee;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.detection__option-card:hover {
+  background-color: #ddd;
+}
+
+/* Estilo para la opción activa */
+.detection__option-card.active {
+  background-color: #d9534f;
+  border-color: #b52b27;
+  color: #fff;
+}
+
+/* Icono y etiqueta dentro de cada tarjeta */
+.detection__option-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.detection__option-label {
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Área de contenido */
+.detection__content {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}

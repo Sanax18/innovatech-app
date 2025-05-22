@@ -1,0 +1,66 @@
+/* Elimina márgenes y padding en la raíz para evitar overflow inesperado */
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+/* Contenedor principal: ocupa el 100% del viewport y usa flexbox */
+.container-sidebar {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar: transita entre estado colapsado y expandido */
+.sidebar-home {
+  background-color: #343a40;
+  color: #fff;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  
+}
+.sidebar-home.collapsed {
+  width: 70px; /* Solo íconos */
+  border-radius: 0 15px 15px 0;
+  
+}
+.sidebar-home.expanded {
+  width: 220px; /* Íconos + etiquetas */
+  border-radius: 0 15px 15px 0;
+}
+
+/* Botones de la sidebar */
+.sidebar-home button {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  width: 100%;
+  padding: 1rem;
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.sidebar-home button:hover,
+.sidebar-home button.active {
+  background-color: #495057;
+}
+.sidebar-home .icon {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+.sidebar-home .label {
+  font-size: 1rem;
+}
+
+/* Contenido: ocupará el espacio restante sin causar scroll lateral */
+.content-sidebar {
+  flex: 1;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  overflow-y: auto; /* Scroll vertical si es necesario */
+  box-sizing: border-box;
+}
