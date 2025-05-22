@@ -1,64 +1,182 @@
-/* Estilos generales para la pestaña de Detección */
+/* Estilos de ../styles/Detection.css adaptados y otros necesarios */
 .detection-container {
   padding: 1rem;
   text-align: center;
+  max-width: 900px; /* Para centrar todo el contenido */
+  margin: 0 auto;
 }
-
 .detection__description {
   margin-bottom: 1rem;
-  font-size: 1.2rem;
-  color: #555;
+  font-size: 1.1rem; /* Un poco más pequeño */
+  color: var(--text-secondary-light); /* Usar variables de tema */
+}
+html.dark .detection__description {
+  color: var(--text-secondary-dark);
 }
 
-/* Grid para las opciones */
 .detection__option-grid {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-bottom: 2rem;
 }
-
-/* Tarjeta de opción (cuadrado) */
 .detection__option-card {
-  width: 150px;
-  height: 150px;
-  background-color: #eee;
-  border: 2px solid #ddd;
+  /* Manteniendo tu nombre de clase */
+  padding: 1rem;
+  background-color: var(--bg-secondary-light);
+  border: 2px solid var(--border-color-light);
   border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s,
+    transform 0.1s;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column; /* Para alinear icono y texto verticalmente */
+  align-items: center;
+  justify-content: center;
+  min-width: 180px; /* Ancho mínimo para las tarjetas */
+  color: var(--text-primary-light);
+}
+html.dark .detection__option-card {
+  background-color: var(--bg-secondary-dark);
+  border-color: var(--border-color-dark);
+  color: var(--text-primary-dark);
+}
+.detection__option-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+html.dark .detection__option-card:hover {
+  border-color: var(--link-color-dark);
+}
+.detection__option-card.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color-hover);
+  color: white; /* O var(--button-primary-text-light) */
+}
+html.dark .detection__option-card.active {
+  background-color: var(--link-color-dark);
+  border-color: var(--link-hover-color-dark);
+  color: var(--bg-primary-dark); /* Texto oscuro sobre fondo de link claro */
+}
+.detection__option-icon {
+  font-size: 2.5rem; /* Más grande */
+  margin-bottom: 0.5rem;
+}
+.detection__option-label {
+  font-size: 0.9rem; /* Un poco más pequeño */
+  font-weight: 500;
+}
+
+/* Este es el "recuadro" que pediste debajo de los botones */
+.detection__content-area {
+  background-color: var(
+    --bg-tertiary-light
+  ); /* Un fondo sutil para el área de contenido */
+  padding: 1.5rem;
+  border: 1px solid var(--border-color-light);
+  border-radius: 8px;
+  margin-top: 1rem; /* Espacio después de la descripción/botones si no hay video/cámara aún */
+  min-height: 480px; /* Altura mínima para el recuadro, igual al video */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+html.dark .detection__content-area {
+  background-color: var(--bg-tertiary-dark);
+  border-color: var(--border-color-dark);
+}
+
+.dropzone {
+  width: 100%;
+  max-width: 640px;
+  min-height: 200px;
+  border: 3px dashed var(--border-color-strong-light);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-  transition: background-color 0.2s, border-color 0.2s;
-}
-
-.detection__option-card:hover {
-  background-color: #ddd;
-}
-
-/* Estilo para la opción activa */
-.detection__option-card.active {
-  background-color: #d9534f;
-  border-color: #b52b27;
-  color: #fff;
-}
-
-/* Icono y etiqueta dentro de cada tarjeta */
-.detection__option-icon {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.detection__option-label {
-  font-size: 1rem;
   text-align: center;
+  margin-bottom: 1rem; /* Espacio si hay un video debajo */
+  background-color: var(--bg-secondary-light);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  color: var(--text-secondary-light);
+}
+html.dark .dropzone {
+  border-color: var(--border-color-strong-dark);
+  background-color: var(--bg-secondary-dark);
+  color: var(--text-secondary-dark);
+}
+.dropzone.dragging {
+  border-color: var(--primary-color);
+}
+html.dark .dropzone.dragging {
+  border-color: var(--link-color-dark);
 }
 
-/* Área de contenido */
-.detection__content {
-  background-color: #f8f9fa;
-  padding: 1rem;
-  border: 1px solid #ddd;
+.video-display-wrapper {
+  /* Contenedor para centrar el video y canvas */
+  width: 100%;
+  max-width: 640px; /* Máximo ancho del video */
+  margin: 0 auto; /* Centrar */
+  position: relative;
+  border: 1px solid var(--border-color-strong-light);
+  border-radius: 8px;
+  overflow: hidden; /* Para que el canvas no se salga si el video tiene bordes redondeados */
+}
+html.dark .video-display-wrapper {
+  border-color: var(--border-color-strong-dark);
+}
+
+video {
+  display: block; /* Elimina espacio extra debajo del video */
+  width: 100%;
+  height: auto;
+  /* border-radius: 8px; No necesario si el wrapper tiene overflow:hidden y border-radius */
+  background-color: #000; /* Fondo oscuro para el video */
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.file-input-container {
+  margin-top: 1rem;
+}
+.file-input-label {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: var(
+    --secondary-color
+  ); /* Usando variable de color Bootstrap */
+  color: white;
   border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+html.dark .file-input-label {
+  background-color: var(
+    --text-muted-dark
+  ); /* Un gris para el botón en modo oscuro */
+  color: var(--text-primary-dark);
+}
+.file-input-label:hover {
+  filter: brightness(90%);
+}
+input[type="file"] {
+  display: none;
+}
+.placeholder-text {
+  color: var(--text-muted-light);
+  font-style: italic;
+}
+html.dark .placeholder-text {
+  color: var(--text-muted-dark);
 }
