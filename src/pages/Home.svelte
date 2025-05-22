@@ -1,5 +1,5 @@
 <script lang="ts">
-    import '../../styles/Home.css';
+    import '../styles/Home.css';
     import Dashboard from './Dashboard.svelte';
     import Detection from './Detection.svelte';
     import Forecast from './Forecast.svelte';

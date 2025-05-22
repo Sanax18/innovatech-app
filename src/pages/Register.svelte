@@ -1,5 +1,5 @@
 <script>
-    import '../../styles/Register.css';
+    import '../styles/Register.css';
     import axios from 'axios';
     import { push } from 'svelte-spa-router';
 

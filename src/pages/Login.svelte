@@ -1,5 +1,5 @@
 <script>
-  import "../../styles/Login.css";
+  import "../styles/Login.css";
   import axios from "axios";
   import { push } from "svelte-spa-router";
 

@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import '../../styles/Forecast.css';
+  import '../styles/Forecast.css';
 
   // Variables para la lectura actual
   let temperature = "--";

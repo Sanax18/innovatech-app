@@ -79,6 +79,6 @@
     width="100%" 
     height="800px" 
     frameborder="0" 
-    allowFullScreen="true">
+    allowFullScreen>
   </iframe>
 </div>

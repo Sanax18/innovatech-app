@@ -1,5 +1,5 @@
 <script>
-    import '../../styles/Detection.css';
+    import '../styles/Detection.css';
 
   // Define el modo activo; por defecto, "camera"
   let mode = "camera";
