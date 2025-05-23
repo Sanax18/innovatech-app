@@ -15,14 +15,14 @@
         activeView = view;
     }
 
-    function toggleDarkMode() {
-        darkMode = !darkMode;
-        if (darkMode) {
-            document.body.classList.add("dark-mode");
-        } else {
-            document.body.classList.remove("dark-mode");
-        }
-    }
+    // function toggleDarkMode() {
+    //     darkMode = !darkMode;
+    //     if (darkMode) {
+    //         document.body.classList.add("dark-mode");
+    //     } else {
+    //         document.body.classList.remove("dark-mode");
+    //     }
+    // }
 
     function logout() {
         // Aquí implementa la lógica de logout, por ejemplo, limpiar tokens, redirigir a login, etc.
@@ -72,7 +72,7 @@
     </button>
 
     <!-- Sección inferior de la sidebar -->
-    <div class="sidebar-footer">
+    <!-- <div class="sidebar-footer">
       <button on:click={toggleDarkMode} class="dark-mode-toggle">
         <span class="icon">{darkMode ? "☀️" : "🌙"}</span>
         {#if sidebarExpanded}
@@ -85,7 +85,7 @@
           <span class="label">Logout</span>
         {/if}
       </button>
-    </div>
+    </div> -->
   </aside>
 
   <section class="content-sidebar">
